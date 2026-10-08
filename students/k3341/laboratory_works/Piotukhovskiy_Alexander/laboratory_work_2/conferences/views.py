@@ -118,7 +118,7 @@ def edit_conference(request, conference_id):
 def register_for_conference(request, conference_id):
     conference = get_object_or_404(Conference, id=conference_id)
     if request.user != conference.owner:
-        conference.participants.add_member(request.user)
+        conference.participants.add(request.user)
     return redirect('conference_detail', conference_id=conference.id)
 
 
@@ -127,7 +127,7 @@ def cancel_registration(request, conference_id):
     conference = get_object_or_404(Conference, id=conference_id)
 
     if request.user in conference.participants.all():
-        conference.participants.remove_member(request.user)
+        conference.participants.remove(request.user)
 
         ConferenceRating.objects.filter(user=request.user, conference=conference).delete()
 
