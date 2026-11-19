@@ -45,9 +45,9 @@ nav:
       - Задание 5: Lab1/task5.md
   - Лабораторная №2:
       - Lab2/index.md
-      - Задание 1: Lab2/task1.md
-      - Задание 2: Lab2/task2.md
-      - Задание 3: Lab2/task3.md
+      - Users: Lab2/users.md
+      - Tours: Lab2/tours.md
+      - Reviews: Lab2/reviews.md
 
 extra:
   generator: false
